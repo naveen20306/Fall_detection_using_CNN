@@ -1,0 +1,86 @@
+{
+    "input_shape": "(None, 32, 32, 1)",
+    "output_shape": "(None, 2)",
+    "layers": [
+        {
+            "name": "conv2d",
+            "type": "Conv2D",
+            "output_shape": "(None, 30, 30, 32)",
+            "trainable": true,
+            "weights": {
+                "shape": "(3, 3, 1, 32)",
+                "file": "layer_0_conv2d_weights.mem"
+            },
+            "biases": {
+                "shape": "(32,)",
+                "file": "layer_0_conv2d_biases.mem"
+            }
+        },
+        {
+            "name": "max_pooling2d",
+            "type": "MaxPooling2D",
+            "output_shape": "(None, 15, 15, 32)",
+            "trainable": true
+        },
+        {
+            "name": "conv2d_1",
+            "type": "Conv2D",
+            "output_shape": "(None, 13, 13, 64)",
+            "trainable": true,
+            "weights": {
+                "shape": "(3, 3, 32, 64)",
+                "file": "layer_2_conv2d_1_weights.mem"
+            },
+            "biases": {
+                "shape": "(64,)",
+                "file": "layer_2_conv2d_1_biases.mem"
+            }
+        },
+        {
+            "name": "max_pooling2d_1",
+            "type": "MaxPooling2D",
+            "output_shape": "(None, 6, 6, 64)",
+            "trainable": true
+        },
+        {
+            "name": "flatten",
+            "type": "Flatten",
+            "output_shape": "(None, 2304)",
+            "trainable": true
+        },
+        {
+            "name": "dense",
+            "type": "Dense",
+            "output_shape": "(None, 128)",
+            "trainable": true,
+            "weights": {
+                "shape": "(2304, 128)",
+                "file": "layer_5_dense_weights.mem"
+            },
+            "biases": {
+                "shape": "(128,)",
+                "file": "layer_5_dense_biases.mem"
+            }
+        },
+        {
+            "name": "dropout",
+            "type": "Dropout",
+            "output_shape": "(None, 128)",
+            "trainable": true
+        },
+        {
+            "name": "dense_1",
+            "type": "Dense",
+            "output_shape": "(None, 2)",
+            "trainable": true,
+            "weights": {
+                "shape": "(128, 2)",
+                "file": "layer_7_dense_1_weights.mem"
+            },
+            "biases": {
+                "shape": "(2,)",
+                "file": "layer_7_dense_1_biases.mem"
+            }
+        }
+    ]
+}
